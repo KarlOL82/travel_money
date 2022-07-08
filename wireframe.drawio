@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="awQh7yqUwGJEL8wkzMlU" name="Page-1">
+        <mxGraphModel dx="1673" dy="1887" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;i&gt;Background Image&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="30" width="710" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;b&gt;Header&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="40" width="670" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="City Search" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="90" width="310" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="City Search&lt;br&gt;&lt;br&gt;Display Currency of region if available&lt;br&gt;&lt;br&gt;attractions around searched city" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FCFCFC;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="-110" width="150" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Currency Card" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FCFCFC;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="150" width="160" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Attraction 1" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FCFCFC;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="150" width="360" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;span&gt;Attraction 2&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FCFCFC;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="210" width="360" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;span&gt;Attraction 3&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FCFCFC;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="280" width="360" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="image" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FCFCFC;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="150" width="90" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="image" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FCFCFC;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="293" y="214" width="90" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="image" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FCFCFC;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="293" y="283" width="90" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Link to site&lt;br&gt;Details of attraction" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FCFCFC;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="120" width="130" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Link to site&lt;br&gt;Details of attraction" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FCFCFC;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="176" width="130" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Link to site&lt;br&gt;Details of attraction" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FCFCFC;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="250" width="130" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
