@@ -1,18 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Money</title>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section class="hero is-grey-lighter is-medium has-background-grey-lighter">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <img
+                  class="logo image is-64x64"
+                  src="assets\Images\image3.jpg"
+                  alt="Logo"
+                />
+                <p id="logo_text">@$trolabe</p>
+              </a>
+              <span class="navbar-burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a
+                  class="navbar-item is-active has-text-grey-darker has-background-white-bis"
+                >
+                  Home
+                </a>
+                <a
+                  class="navbar-item has-text-grey-darker has-background-white-bis"
+                >
+                  Random
+                </a>
+                <a
+                  class="navbar-item has-text-grey-darker has-background-white-bis"
+                >
+                  Recents
+                </a>
+                <span class="navbar-item">
+                  <a
+                    class="button is-primary is-inverted has-text-grey-darker has-background-white-bis"
+                  >
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Favorites</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title has-text-grey-darker">Follow the Money...</p>
+          <p class="subtitle has-text-grey-darker">
+            View locations around the world and see how far your dollar will take
+            you...
+          </p>
+          <input
+            class="input is-info"
+            type="text"
+            placeholder="Enter a city or country to see popular attractions and current exchange rate"
+          />
+          <button class="button" type="submit" value="Submit input">$earch</button>
+          
+        </div>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <nav class="tabs">
+          <div class="container">
+            <ul>
+              <li class="is-active has-text-grey-darker"><a>Overview</a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+              <li><a></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <img
+      class="bottom_map"
+      src="assets\Images\image1.jpg"
+      alt="Futuristic World Map"
+    />
+
+
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
