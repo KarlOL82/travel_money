@@ -8,9 +8,8 @@ var searchButton = document.getElementById("searchButton");
 var locationData = document.getElementById("searchInput");
 
 
-function getLocation() {
-    locationEl = event.target
-}
+
+
 
 function getApi() {
   var requestUrl =
@@ -29,5 +28,9 @@ function getApi() {
     });
 }
 
-searchButton.addEventListener("click", function(event));
-document.querySelector("#searchButton").addEventListener("click", getLocation)
+locationData.addEventListener("click", function(event) {
+    var locationEl = Event.target;
+}
+
+
+//document.querySelector("#searchButton").addEventListener("click", getLocation)
