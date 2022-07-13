@@ -3,8 +3,14 @@
 // Event selector for the dropdown event
 
 // Event selector for the submission click
-var repoList = document.querySelector("dropdown-menu");
+var searchList = document.querySelector("dropdown-menu4");
 var searchButton = document.getElementById("searchButton");
+var locationData = document.getElementById("searchInput");
+
+
+function getLocation() {
+    locationEl = event.target
+}
 
 function getApi() {
   var requestUrl =
@@ -16,11 +22,12 @@ function getApi() {
     })
     .then(function (data) {
       for (var i = 0; i < data.length; i++) {
-        var listItem = document.createElement("dropdown-item");
+        var listItem = document.textContent("dropdown-item");
         listItem.textContent = data[i].html_url;
-        repoList.appendChild(listItem);
+        searchList.appendChild(listItem);
       }
     });
 }
 
-searchButton.addEventListener("click", getApi);
+searchButton.addEventListener("click", function(event));
+document.querySelector("#searchButton").addEventListener("click", getLocation)
