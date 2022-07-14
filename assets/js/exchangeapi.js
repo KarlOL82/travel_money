@@ -28,9 +28,10 @@ function getApi() {
     });
 }
 
-locationData.addEventListener("click", function(event) {
+searchButton.addEventListener("click", function(event) {
     var locationEl = Event.target;
-}
+    console.log("click");
+})
 
 
 //document.querySelector("#searchButton").addEventListener("click", getLocation)
