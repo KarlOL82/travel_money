@@ -1,6 +1,10 @@
-<<<<<<< HEAD
-console.log("Hello World");
+var searchBtnEl = document.querySelector("#search-btn");
+var citySearchEl = document.querySelector("#city-search");
+var citySearch = "";
 
-// Variables will go here
-=======
->>>>>>> b203dbc798c90ff09433ab134ec7be7a7a2c180f
+searchBtnEl.addEventListener("click", function(event) {
+    console.log("Clicked");
+    var citySearch = citySearchEl.value;
+    console.log(citySearch);
+    getOpenTripApi(citySearch);
+  });
