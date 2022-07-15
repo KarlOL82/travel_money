@@ -36,7 +36,12 @@ fetch(requestUrl)
   .then(function (data) {
     console.log(data);
     console.log(data.conversion_rates)
-    var exchangeRates = data.conversion_rates
+    var exchangeRates = data.conversion_rates;
+    var dropMenu = document.getElementsByClassName("dropdown-item");
+    
+    for (var i=0; i < data.length; i++) {
+      dropMenu.append(exchangeRates);
+    }
   });
 
   // create html template
@@ -44,9 +49,9 @@ fetch(requestUrl)
   // create html elements in dropdwon <a>conversion</a> 
 
   dropBtn.addEventListener("click", function (event) {
-    fetch(data.conversion_rates)
-    var currencyEl = event.target;
-    moneyList.push(data.conversion_rates);
+    // fetch(data.conversion_rates)
+    // var currencyEl = event.target;
+    // moneyList.push(data.conversion_rates);
     console.log("click");
   });
 
