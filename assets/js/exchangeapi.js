@@ -28,7 +28,7 @@
 var requestUrl =
 "https://v6.exchangerate-api.com/v6/9ffdf9b7d17e2ab7e04ed8ff/latest/USD";
  var locationData = document.getElementById("searchInput");
- var dropItem = document.getElementsByClassName("dropdown-item");
+ var dropItem = document.getElementById("moneyItem");
  var dropMenu = document.getElementById("dropdownMenu");
  
 
@@ -64,7 +64,7 @@ var listFrag = document.createDocumentFragment();
     console.log(data[key]);
 
   var listEl = document.createElement("div");
-  listEl.setAttribute("class","money")
+  listEl.setAttribute("class","dropdown-item")
 
 
   var template = 
@@ -73,11 +73,12 @@ var listFrag = document.createDocumentFragment();
   console.log(template);
 
   
-  dropItem.innerHTML = template;
+  listEl.innerHTML = template;
   listFrag.append(listEl);
   };
 
-  return listFrag;
+  dropItem.append(listFrag);
+  
   // listEl.append(dropItem)
 
   
