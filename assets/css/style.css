@@ -17,4 +17,26 @@ color: black
     padding: 15px;
     margin: 15px;
 }
+.saveButton{
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: inherit;
+    margin-left: 70%;
+    bottom: 23px;
+    right: 28px;
+    width: 180px;  
+}
 
+.popUp{
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  margin-left: 70%;
+}
