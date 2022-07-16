@@ -62,5 +62,7 @@ function getDetails(){
   })
   .then(function(data){
     console.log(data);
-  })
+   displayAttractions(data);
+  });
+
 }
