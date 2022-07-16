@@ -64,11 +64,11 @@ var listFrag = document.createDocumentFragment();
     console.log(data[key]);
 
   var listEl = document.createElement("div");
-  listEl.setAttribute("class", "dropdown-item")
+  listEl.setAttribute("class","money")
 
 
   var template = 
-  `<a href= "#" class="dropdown-item">${data[key]}</a>`;
+  `<a href= "#" class="dropdown-item">${key}</a>`;
   console.log(dropItem);
   console.log(template);
 
