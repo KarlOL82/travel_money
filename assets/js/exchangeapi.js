@@ -20,16 +20,18 @@
 //     });
 // }
 //var  = document.getElementById("dropBtn");
-var locationData = document.getElementById("searchInput");
-var moneyList = [];
+//var moneyList = [];
+//var html_Url = "https://v6.exchangerate-api.com/v6/9ffdf9b7d17e2ab7e04ed8ff/latest/USD";
+//var exchangeRates = (""); 
+
+
 var requestUrl =
-  "https://v6.exchangerate-api.com/v6/9ffdf9b7d17e2ab7e04ed8ff/latest/USD";
-
- //var exchangeRates = (""); 
-
-
+"https://v6.exchangerate-api.com/v6/9ffdf9b7d17e2ab7e04ed8ff/latest/USD";
+ var locationData = document.getElementById("searchInput");
  var dropItem = document.getElementsByClassName("dropdown-item");
  var dropMenu = document.getElementById("dropdownMenu");
+ 
+
 
 fetch(requestUrl)
   .then(function (response) {
@@ -37,24 +39,60 @@ fetch(requestUrl)
   })
   .then(function (data) {
     console.log(data);
-    console.log(data.conversion_rates)
+    console.log(data.conversion_rates);
     var exchangeRates = data.conversion_rates;
+    console.log(exchangeRates);
+
+    dropDisplay(exchangeRates);
     
-    for (var i=0; i < data.length; i++) {
-      dropMenu.append(exchangeRates);
-    }
+  //   for (var i=0; i < data.length; i++) {
+      
+  //       dropItem.textContent = data[i].conversion_rates;
+  //       console.log(data[i].conversion_rates);
+  //       exchangeRates.append(listItem);
+  //     dropMenu.append(exchangeRates);
+  //   }
   });
+
+function dropDisplay (data) {
+
+var listFrag = document.createDocumentFragment();
+
+  for (var key in data ) {
+    data[key];
+    console.log(key);
+    console.log(data[key]);
+
+  var listEl = document.createElement("div");
+  listEl.setAttribute("class", "dropdown-item")
+
+
+  var template = 
+  `<a href= "#" class="dropdown-item">${data[key]}</a>`;
+  console.log(dropItem);
+  console.log(template);
+
+  
+  dropItem.innerHTML = template;
+  listFrag.append(listEl);
+  };
+
+  return listFrag;
+  // listEl.append(dropItem)
+
+  
+
 
   // create html template
   // for loop to iterate through data.conversion_rates
   // create html elements in dropdwon <a>conversion</a> 
 
-  dropBtn.addEventListener("click", function (event) {
-    // fetch(data.conversion_rates)
-    // var currencyEl = event.target;
-    // moneyList.push(data.conversion_rates);
-    console.log("click");
-  });
+ 
+  //   // fetch(data.conversion_rates)
+  //   // var currencyEl = event.target;
+  //   // moneyList.push(data.conversion_rates);
+  //   console.log("click");
+  // });
 
 //document.querySelector("#searchButton").addEventListener("click", getLocation)
-
+}
