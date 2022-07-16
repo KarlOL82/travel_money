@@ -28,7 +28,8 @@ var requestUrl =
  //var exchangeRates = (""); 
 
 
- var dropMenu = document.getElementsByClassName("dropdown-item");
+ var dropItem = document.getElementsByClassName("dropdown-item");
+ var dropMenu = document.getElementById("dropdownMenu");
 
 fetch(requestUrl)
   .then(function (response) {
