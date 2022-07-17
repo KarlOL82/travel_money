@@ -14,7 +14,7 @@ fetch(requestUrl)
     // console.log(data);
     // console.log(data.conversion_rates);
     var exchangeRates = data.conversion_rates;
-    // console.log(exchangeRates);
+    console.log(exchangeRates);
 
     dropDisplay(exchangeRates);
   });
