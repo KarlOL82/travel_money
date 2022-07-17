@@ -3,6 +3,8 @@ var requestUrl =
 var locationData = document.getElementById("searchInput");
 var dropItem = document.getElementById("moneyItem");
 var dropMenu = document.getElementById("dropdownMenu");
+var moneyEl = document.getElementById("moneyItem");
+
 
 fetch(requestUrl)
   .then(function (response) {
@@ -28,9 +30,9 @@ function dropDisplay(data) {
     var listEl = document.createElement("div");
     listEl.setAttribute("class", "dropdown-item");
 
-    var template = `<a href= "#" class="dropdown-item">${key}</a>`;
-    console.log(dropItem);
-    console.log(template);
+    var template = `<a class="data dropdown-item" data-value=${data[key]}>${key}</a>`;
+    
+    
 
     listEl.innerHTML = template;
     listFrag.append(listEl);
@@ -38,3 +40,19 @@ function dropDisplay(data) {
 
   dropItem.append(listFrag);
 }
+
+function selectCurrency(data) {
+  var userCurrency = document.getElementById("currencyDisplay");
+  var elEl = document.getElementsByClassName("data"); 
+  //console.log(elEl);
+  userCurrency.textContent = $(elEl).attr("data-value");
+  console.log(userCurrency);
+  
+    
+}
+moneyEl.addEventListener("click",function(event) {
+  selectCurrency();
+  console.log("click")
+  var moneyDisplay = event.target;
+  console.log(moneyDisplay);
+});
