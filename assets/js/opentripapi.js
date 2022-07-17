@@ -62,7 +62,33 @@ function getDetails(){
   })
   .then(function(data){
     console.log(data);
-   displayAttractions(data);
+    displayAttractions(data);
   });
-
 }
+
+
+
+var popupWindow = null;
+function centeredPopup(url,winName,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+popupWindow = window.open(url,winName,settings)
+}
+// function basicPopup(url) {
+//  popupWindow = window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+//    }
+
+
+// save locations to local storage
+localStorage.setItem("data, name");
+
+//rdg local storage
+var savedLocation = localStorage.getItem();
+
+
+//removing one item from local storage
+
+localStorage.removeItem();
+
