@@ -62,7 +62,8 @@ function getDetails(){
   })
   .then(function(data){
     console.log(data);
-  })
+    displayAttractions(data);
+  });
 }
 
 
@@ -90,3 +91,4 @@ var savedLocation = localStorage.getItem();
 //removing one item from local storage
 
 localStorage.removeItem();
+

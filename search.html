@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+  <div class="money">Money</div>
     <!-- The Hero / Header -->
     <section class="hero has-background-grey">
     <div class="hero-body">
@@ -29,7 +30,7 @@
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>1</span>
+                        <span>1 USD =</span>
                         <span class="icon is-small">
                           <i class="fas fa-angle-down" aria-hidden="true"></i>
                         </span>
@@ -37,15 +38,15 @@
                     </div>
                     <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                       <div class="dropdown-content">
-                        <div class="dropdown-item">
+                        <div class="dropdown-item" id="moneyItem">
                             <a href="#" class="dropdown-item">
-                                USD
+                                
                               </a>
                               <a href="#" class="dropdown-item">
-                                Dropdown item 2
+                               
                               </a>
                               <a href="#" class="dropdown-item">
-                                Dropdown item 3
+                                
                               </a>
                         </div>
                       </div>
@@ -88,5 +89,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/opentripapi.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src ="assets/js/exchangeapi.js">
 </body>
 </html>

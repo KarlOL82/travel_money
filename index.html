@@ -21,7 +21,7 @@
             <div class="navbar-brand">
               <a class="navbar-item">
                 <img
-                  class="logo image is-64x64"
+                  class="logo image is-357x64"
                   src="assets\Images\image3.jpg"
                   alt="Logo"
                 />
@@ -75,16 +75,89 @@
             you...
           </p>
           <input
+
+
             id="city-search"
+
             class="input is-info"
             type="text"
             placeholder="Enter a city or country to see popular attractions and current exchange rate"
           />
+
           <button  id="search-btn" class="button" type="submit" value="Submit input">$earch</button>
+
           
         </div>
       </div>
-
+      <div class="columns">
+        <!-- Column 1 -->
+        <div class="column is-one-fifth"><div class="card">
+          
+            <div class="card-content">
+              <div class="media">
+                <!-- Drop Down 1 -->
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button" class="moneyButton" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>1 USD =</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content">
+                        <button class="dropdown-item" id="moneyItem">
+                            <a href="#" class="dropdown-item">
+                                
+                              </a>
+                              <a href="#" class="dropdown-item">
+                               
+                              </a>
+                              <a href="#" class="dropdown-item">
+                                
+                              </a>
+                          </button>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+          
+              <div class="content">
+                Currency:
+              <div class="box" id="currencyDisplay">
+                
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Column 2 -->
+          <div class="column" id="articles">
+            <!-- <div class="box is-flex">
+                <article class="media">
+                  <div class="media-left">
+                    <figure class="image is-64x64">
+                      <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                      </p>
+                    </div>
+                    <button>Button</button>
+                   
+                  </div>
+                </article>
+            </div> -->
+        </div>
+      </div>
       <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot">
         <nav class="tabs">
@@ -109,7 +182,10 @@
     />
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/exchangeapi.js"></script>
     <script src="./assets/js/opentripapi.js"></script>
     <script src="./assets/js/script.js"></script>
+    
   </body>
 </html>
