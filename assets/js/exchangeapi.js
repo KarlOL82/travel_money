@@ -11,10 +11,10 @@ fetch(requestUrl)
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
-    console.log(data.conversion_rates);
+    // console.log(data);
+    // console.log(data.conversion_rates);
     var exchangeRates = data.conversion_rates;
-    console.log(exchangeRates);
+    // console.log(exchangeRates);
 
     dropDisplay(exchangeRates);
   });
@@ -24,8 +24,8 @@ function dropDisplay(data) {
 
   for (var key in data) {
     data[key];
-    console.log(key);
-    console.log(data[key]);
+    // console.log(key);
+    // console.log(data[key]);
 
     var listEl = document.createElement("div");
     listEl.setAttribute("class", "dropdown-item");
@@ -41,18 +41,19 @@ function dropDisplay(data) {
   dropItem.append(listFrag);
 }
 
-function selectCurrency(data) {
+function selectCurrency(event) {
   var userCurrency = document.getElementById("currencyDisplay");
   var elEl = document.getElementsByClassName("data"); 
+  console.log(event.target.getAttribute("data-value") + event.target.textContent);
   //console.log(elEl);
-  userCurrency.textContent = $(elEl).attr("data-value");
-  console.log(userCurrency);
+userCurrency.textContent = event.target.getAttribute("data-value") + " " + event.target.textContent;
+  // console.log($(elEl).attr("data-value"));
   
     
 }
 moneyEl.addEventListener("click",function(event) {
-  selectCurrency();
-  console.log("click")
-  var moneyDisplay = event.target;
-  console.log(moneyDisplay);
+  selectCurrency(event);
+  // console.log("click")
+  
+  // console.log(moneyDisplay);
 });
