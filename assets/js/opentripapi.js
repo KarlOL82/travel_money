@@ -27,9 +27,9 @@ return fetch(getCityUrl)
    });
 }
 
-// Fetches the attractions within a 10 miles from the geolocation
+// Fetches the attractions within a ~5 miles from the geolocation with a popularity of 2 or greater.
 function getDestinations(){
-  var attractionsUrl = apiBaseUrl+"/radius?radius=16000&lon="+cityLon+"&lat="+cityLat+"&format=json&limit=5&apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
+  var attractionsUrl = apiBaseUrl+"/radius?radius=8000&lon="+cityLon+"&lat="+cityLat+"&rate=2&format=json&limit=100&apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
 // console.log(attractionsUrl);
   return fetch(attractionsUrl)
   .then(function(response) {
@@ -68,27 +68,27 @@ function getDestinations(){
 
 
 
-// var popupWindow = null;
-// function centeredPopup(url,winName,w,h,scroll){
-// LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-// TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-// settings =
-// 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
-// popupWindow = window.open(url,winName,settings)
-// }
-// // function basicPopup(url) {
-// //  popupWindow = window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-// //    }
+var popupWindow = null;
+function centeredPopup(url,winName,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+popupWindow = window.open(url,winName,settings)
+}
+// function basicPopup(url) {
+//  popupWindow = window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+//    }
 
 
-// // save locations to local storage
-// localStorage.setItem("data, name");
+// save locations to local storage
+localStorage.setItem("data, name");
 
-// //rdg local storage
-// var savedLocation = localStorage.getItem();
+//rdg local storage
+var savedLocation = localStorage.getItem();
 
 
-// //removing one item from local storage
+//removing one item from local storage
 
-// localStorage.removeItem();
+localStorage.removeItem();
 
