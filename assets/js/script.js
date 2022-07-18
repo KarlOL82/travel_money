@@ -31,7 +31,7 @@ function displayAttractions(data) {
               ${data.wikipedia_extracts.text}
             </p>
           </div>
-          <button class="saveButton">Add to Favorites!</button>    
+         <button>Button</button>     
         </div>
       </article>
     </div>`;
