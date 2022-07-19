@@ -38,34 +38,31 @@ function getDestinations(){
   .then(function(data){
     // console.log(data);
     displayNamesKinds(data);
-    for(var i=0; i < 1; i++) {
-  // var  detailsUrl = apiBaseUrl+"/xid/"+data[i].xid+"&apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
-  // console.log(data[i].xid);
-  uniqueId = data[i].xid;
-  getDetails();
 
-}
   });
 
 }
 
-function getDetails(){
+// function getDetails(){
   
-// for(var i=0; i < data.length; i++) {
-  var  detailsUrl = apiBaseUrl+"/xid/"+uniqueId+"?apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
-  // console.log(detailsUrl);
-// }
+// // for(var i=0; i < data.length; i++) {
+//   var  detailsUrl = apiBaseUrl+"/xid/"+uniqueId+"?apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
+//   // console.log(detailsUrl);
+// // }
+// var  detailsUrl = apiBaseUrl+"/xid/"+uniqueId+"?apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
+//   return fetch(detailsUrl)
+//   .then(function(response){
+//     return response.json();
+//   })
+//   .then(function(data){
+//     console.log(data);
+//     // MODAL For INFO Display
+//     // displayNamesKinds(data);
+//   });
+// // }
 
-  return fetch(detailsUrl)
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(data){
-    console.log(data);
-    // MODAL For INFO Display
-    // displayNamesKinds(data);
-  });
-}
+
+
 
 
 

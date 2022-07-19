@@ -2,13 +2,15 @@ var searchBtnEl = document.querySelector("#search-btn");
 var citySearchEl = document.querySelector("#city-search");
 var citySearch = "";
 var articlesEl = document.querySelector("#articles");
-var modalEl = document.querySelector("#modal");
+var resultsEl = document.querySelector("#results");
+
 // This is our Event listener for the click event.  It also clears the previous search information.
 searchBtnEl.addEventListener("click", function (event) {
-  console.log("Clicked");
+  // console.log("Clicked");
   var citySearch = citySearchEl.value;
   articlesEl.innerHTML = ``;
-  console.log(citySearch);
+  resultsEl.innerHTML = ``;
+  // console.log(citySearch);
   getOpenTripApi(citySearch);
 });
 
@@ -16,7 +18,7 @@ citySearchEl.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("search-btn").click();
-    console.log("enter");
+    // console.log("enter");
   }
 });
 
@@ -25,15 +27,17 @@ function displayNamesKinds(data) {
   var docFrag = document.createDocumentFragment();
 
   for (var i = 0; i < data.length; i++) {
-    var divEl = document.createElement("div");
-    divEl.setAttribute("data-id", data[i].xid);
+    var divEl = document.createElement("button");
+    // divEl.setAttribute("data-id", data[i].xid);
     divEl.setAttribute("class", "box is-flex");
+  
 
     var template = ` <article class="media">
     <div class="media-content">
       <div class="content">
         <h5>${data[i].name}</h5>
         <p>${getCategory(data[i].kinds)}</p>
+        <a data-id="${data[i].xid}">Details</a>
       </div>
     </div>
     <button class="saveButton is-justified">Add to Favorites!</button>
@@ -46,6 +50,47 @@ function displayNamesKinds(data) {
   articlesEl.append(docFrag);
   // console.log(template);
 }
+
+
+
+function detailResults(event) {
+  var searchResults = document.getElementById("results");
+  var  detailsUrl = apiBaseUrl+"/xid/"+event.target.getAttribute("data-id")+"?apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
+ 
+  return fetch(detailsUrl)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    var docFrag = document.createDocumentFragment();
+    console.log(data);
+    var divEl = document.createElement("div");
+    divEl.setAttribute("class", "box is-flex");
+
+    var template = `<article class="media">
+    <div class="media-content">
+      <div class="content">
+        <h5>${data.name}</h5>
+        ${data.wikipedia_extracts.html}
+        <a href="${data.wikipedia}" target="_blank">wikipedia Link</a>
+      </div>
+    </div>
+   </article>
+    `;
+    divEl.innerHTML = template;
+    docFrag.append(divEl);
+    resultsEl.append(docFrag);
+  });
+}
+
+articlesEl.addEventListener("click",function(event) {
+   // console.log("click");
+   resultsEl.innerHTML = ``;
+  detailResults(event);
+});
+
+
+
 
 // This function takes the category or Kind data and display the first kind as a string.
 function getCategory(data) {
