@@ -12,6 +12,14 @@ searchBtnEl.addEventListener("click", function (event) {
   getOpenTripApi(citySearch);
 });
 
+citySearchEl.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("search-btn").click();
+    console.log("enter");
+  }
+});
+
 // This function takes the attractions names and kinds and creates a template literal that is injected into the html code.
 function displayNamesKinds(data) {
   var docFrag = document.createDocumentFragment();
@@ -28,7 +36,7 @@ function displayNamesKinds(data) {
         <p>${getCategory(data[i].kinds)}</p>
       </div>
     </div>
-    <button class="saveButton">Add to Favorites!</button>
+    <button class="saveButton is-justified">Add to Favorites!</button>
   </article>
   `;
 

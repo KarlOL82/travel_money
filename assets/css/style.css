@@ -1,3 +1,8 @@
+.logoImage {
+    min-height: 60px;
+    width: auto;
+    border: solid darkgray;
+}
 
 #logo_text {
 font-size: 3rem;
@@ -27,7 +32,7 @@ color: black
 }
 
 
-// favorites-button
+
 .popUp{
   color: white;
   padding: 10px 20px;
@@ -42,3 +47,9 @@ color: black
     text-align: center;
 }
 
+.dropdown-content {
+    max-height: 20em;
+    overflow: auto;
+  }
+
+  

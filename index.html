@@ -21,6 +21,8 @@
             <div class="navbar-brand">
               <a class="navbar-item">
                 <img
+                  class="logoImage"
+
                   class="logo image is-357x64"
                   src="assets\Images\image3.jpg"
                   alt="Logo"
@@ -36,28 +38,36 @@
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
                 <a
+                  href="https://opentripmap.com/en/#20/51.50069/-0.12458"
+                  class="navbar-item is-active has-text-grey-darker"
+                >
+                  OpenTripMap
+                </a>
+                <a
+                  href="https://app.exchangerate-api.com/dashboard"
+                  class="navbar-item has-text-grey-darker "
+                >
+                  ExchangeRate-API
+                </a>
+                <a
+                  class="navbar-item has-text-grey-darker"
+                >
+                  Recent Searches
+                </a>
+                <a
+                  href="./favorites.html"
                   class="navbar-item is-active has-text-grey-darker has-background-white-bis"
                 >
-                  Home
+                  Favorites
                 </a>
-                <a
-                  class="navbar-item has-text-grey-darker has-background-white-bis"
-                >
-                  Random
-                </a>
-                <a
-                  class="navbar-item has-text-grey-darker has-background-white-bis"
-                >
-                  Recents
-                </a>
-                <span class="navbar-item">
+                <!-- <span class="navbar-item">
                   <a
                     class="button is-primary is-inverted has-text-grey-darker has-background-white-bis"
                   >
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Favorites</span>
+                    <span>Favorites</span> -->
                   </a>
                 </span>
               </div>
@@ -72,7 +82,7 @@
           <p class="title has-text-grey-darker">Follow the Money...</p>
           <p class="subtitle has-text-grey-darker">
             View locations around the world and see how far your dollar will
-            take you...
+            take you!
           </p>
           <input
             id="city-search"
@@ -83,7 +93,7 @@
 
           <button
             id="search-btn"
-            class="button"
+            class="button is-dark is-rounded"
             type="submit"
             value="Submit input"
           >
@@ -102,7 +112,7 @@
                 <div class="dropdown is-hoverable">
                   <div class="dropdown-trigger">
                     <button
-                      class="button"
+                      class="button is-dark"
                       class="moneyButton"
                       aria-haspopup="true"
                       aria-controls="dropdown-menu4"
