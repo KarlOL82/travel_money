@@ -42,3 +42,9 @@ color: black
     text-align: center;
 }
 
+.dropdown-content {
+    max-height: 20em;
+    overflow: auto;
+  }
+
+  
