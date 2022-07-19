@@ -62,6 +62,7 @@ function getDetails(){
   })
   .then(function(data){
     console.log(data);
+    // MODAL For INFO Display
     // displayNamesKinds(data);
   });
 }
