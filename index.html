@@ -137,6 +137,26 @@
         <!-- !!!Column 2!!! -->
         <div class="column is-three-fifths" id="articles">
           <!-- Attractions template literals populate here -->
+
+          <div data-id="W37056442" class="box is-flex"> <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h5>Central Library</h5>
+                <p>other</p>
+              </div>
+            </div>
+            <button class="saveButton">Add to Favorites!</button>
+          </article>
+          </div>
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h5>${data[i].name}</h5>
+                <p>${getCategory(data[i].kinds)}</p>
+              </div>
+            </div>
+            <button class="saveButton">Add to Favorites!</button>
+          </article>
         </div>
       </div>
       <!-- Hero footer: will stick at the bottom -->
@@ -166,5 +186,46 @@
     <script src="./assets/js/exchangeapi.js"></script>
     <script src="./assets/js/opentripapi.js"></script>
     <script src="./assets/js/script.js"></script>
+  
+    <a class = "button is-primary modal-button" data-target = "#modal">Launch Card modal</a>
+    <div id = "modal" class = "modal">
+               <div class = "modal-background"></div>
+               <div class = "modal-card">
+                  <header class = "modal-card-head">
+                     <p class = "modal-card-title">Modal Card</p>
+                     <button class = "delete" aria-label = "close"></button>
+                  </header>
+                  
+                  <section class = "modal-card-body">
+                     <div class = "content">
+                        <h1>Level One</h1>
+                        <p>
+                           This is simple text. This is simple text. 
+                           This is simple text. This is simple text.
+                        </p>
+                        
+                
+                     </div>
+                  </section>
+                  
+               </div>
+            </div>
+
+            <script>
+             // var modalEl = document.querySelector(".modal");
+             // modalEl.classList.toggle('is-active');
+              $(".modal-button").click(function() {
+                 var target = $(this).data("target");
+  
+                 $("html").addClass("is-clipped");
+                 $(target).addClass("is-active");
+              });
+              
+              $(".modal-close").click(function() {
+                 $("html").removeClass("is-clipped");
+                 $(this).parent().removeClass("is-active");
+              });
+           </script>
+
   </body>
 </html>

@@ -2,7 +2,7 @@ var searchBtnEl = document.querySelector("#search-btn");
 var citySearchEl = document.querySelector("#city-search");
 var citySearch = "";
 var articlesEl = document.querySelector("#articles");
-
+var modalEl = document.querySelector("#modal");
 // This is our Event listener for the click event.  It also clears the previous search information.
 searchBtnEl.addEventListener("click", function (event) {
   console.log("Clicked");
@@ -89,3 +89,4 @@ function getCategory(data) {
 //   }
 //   articlesEl.append(docFrag);
 //   // console.log(template);
+
