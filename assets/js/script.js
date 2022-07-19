@@ -36,7 +36,7 @@ function displayNamesKinds(data) {
         <p>${getCategory(data[i].kinds)}</p>
       </div>
     </div>
-    <button class="saveButton">Add to Favorites!</button>
+    <button class="saveButton is-justified">Add to Favorites!</button>
   </article>
   `;
 
