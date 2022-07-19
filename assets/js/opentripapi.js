@@ -12,33 +12,33 @@ function getOpenTripApi(citySearch) {
 
 var getCityUrl = apiBaseUrl + "/geoname";
   getCityUrl += "?name=" + citySearch + "&apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
-  console.log(getCityUrl);
+  // console.log(getCityUrl);
 
 return fetch(getCityUrl)
   .then(function(response) {
     return response.json();
   })
   .then(function (data){
-    console.log(data.lat);
-    console.log(data.lon);
+    // console.log(data.lat);
+    // console.log(data.lon);
    cityLon = data.lon;
    cityLat = data.lat;
    getDestinations();
    });
 }
 
-// Fetches the attractions within a 10 miles from the geolocation
+// Fetches the attractions within a ~5 miles from the geolocation with a popularity of 2 or greater.
 function getDestinations(){
-  var attractionsUrl = apiBaseUrl+"/radius?radius=16000&lon="+cityLon+"&lat="+cityLat+"&format=json&limit=5&apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
-console.log(attractionsUrl);
+  var attractionsUrl = apiBaseUrl+"/radius?radius=8000&lon="+cityLon+"&lat="+cityLat+"&rate=2&format=json&limit=100&apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
+// console.log(attractionsUrl);
   return fetch(attractionsUrl)
-  .then(function(response){
+  .then(function(response) {
     return response.json();
   })
   .then(function(data){
-    console.log(data);
-    
-    for(var i=0; i < data.length; i++) {
+    // console.log(data);
+    displayNamesKinds(data);
+    for(var i=0; i < 1; i++) {
   // var  detailsUrl = apiBaseUrl+"/xid/"+data[i].xid+"&apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
   // console.log(data[i].xid);
   uniqueId = data[i].xid;
@@ -62,33 +62,34 @@ function getDetails(){
   })
   .then(function(data){
     console.log(data);
-    displayAttractions(data);
+    // MODAL For INFO Display
+    // displayNamesKinds(data);
   });
 }
 
 
 
-var popupWindow = null;
-function centeredPopup(url,winName,w,h,scroll){
-LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-settings =
-'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
-popupWindow = window.open(url,winName,settings)
-}
-// function basicPopup(url) {
-//  popupWindow = window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-//    }
+// var popupWindow = null;
+// function centeredPopup(url,winName,w,h,scroll){
+// LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+// TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+// settings =
+// 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+// popupWindow = window.open(url,winName,settings)
+// }
+// // function basicPopup(url) {
+// //  popupWindow = window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+// //    }
 
 
-// save locations to local storage
-localStorage.setItem("data, name");
+// // save locations to local storage
+// localStorage.setItem("data, name");
 
-//rdg local storage
-var savedLocation = localStorage.getItem();
+// //rdg local storage
+// var savedLocation = localStorage.getItem();
 
 
-//removing one item from local storage
+// //removing one item from local storage
 
-localStorage.removeItem();
+// localStorage.removeItem();
 
