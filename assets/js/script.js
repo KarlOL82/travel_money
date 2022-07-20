@@ -121,14 +121,17 @@ function favBtn(event){
     xid: event.target.getAttribute("data-id")
   }
   console.log(favoriteData);
+  
 
-  // if (favorites === null){
-  //   favorites = [favoriteData];
-  // } else if (!favorites.some(item => item.name === favoriteData.name)){
-  //   favorites.push(favoriteData)
-  // }
-  // localStorage.setItem("favorites", JSON.stringify(favorites));
-  // window.location.reload();
+
+
+  if (favorites === null){
+    favorites = [favoriteData];
+  } else if (!favorites.some(item => item.name === favoriteData.name)){
+    favorites.push(favoriteData)
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+console.log(localStorage);
   event.preventDefault();
 }
 
