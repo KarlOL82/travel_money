@@ -29,9 +29,7 @@ function displayNamesKinds(data) {
 
   for (var i = 0; i < data.length; i++) {
     var divEl = document.createElement("div");
-    // divEl.setAttribute("data-id", data[i].xid);
     divEl.setAttribute("class", "box is-flex container");
-  
 
     var template = ` <article class="media is-fullwidth">
     <div class="media-content">
@@ -52,22 +50,24 @@ function displayNamesKinds(data) {
   // console.log(template);
 }
 
-
-
 function detailResults(event) {
-  var  detailsUrl = apiBaseUrl+"/xid/"+event.target.getAttribute("data-id")+"?apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
- 
-  return fetch(detailsUrl)
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(data){
-    var docFrag = document.createDocumentFragment();
-    // console.log(data);
-    var divEl = document.createElement("div");
-    divEl.setAttribute("class", "box is-flex");
+  var detailsUrl =
+    apiBaseUrl +
+    "/xid/" +
+    event.target.getAttribute("data-id") +
+    "?apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
 
-    var template = `<article class="media is-flex">
+  return fetch(detailsUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var docFrag = document.createDocumentFragment();
+      // console.log(data);
+      var divEl = document.createElement("div");
+      divEl.setAttribute("class", "box is-flex");
+
+      var template = `<article class="media is-flex">
     <div class="media-content">
       <div class="content">
         <h5>${data.name}</h5>
@@ -77,21 +77,17 @@ function detailResults(event) {
     </div>
    </article>
     `;
-    divEl.innerHTML = template;
-    docFrag.append(divEl);
-    resultsEl.append(docFrag);
-  });
+      divEl.innerHTML = template;
+      docFrag.append(divEl);
+      resultsEl.append(docFrag);
+    });
 }
 
-articlesEl.addEventListener("click",function(event) {
-   // console.log("click");
-   resultsEl.innerHTML = ``;
+articlesEl.addEventListener("click", function (event) {
+  // console.log("click");
+  resultsEl.innerHTML = ``;
   detailResults(event);
 });
-
-
-
-
 
 // This function takes the category or Kind data and display the first kind as a string.
 function getCategory(data) {
@@ -112,71 +108,22 @@ function getCategory(data) {
   }
 }
 
-function favBtn(event){
+function favBtn(event) {
   // var favoriteEl = document.querySelector()
   var favorites = JSON.parse(localStorage.getItem("favorites"));
   var favoriteData = {
     name: event.target.getAttribute("data-name"),
     kinds: event.target.getAttribute("data-kinds"),
-    xid: event.target.getAttribute("data-id")
-  }
+    xid: event.target.getAttribute("data-id"),
+  };
   console.log(favoriteData);
-  
 
-
-
-  if (favorites === null){
+  if (favorites === null) {
     favorites = [favoriteData];
-  } else if (!favorites.some(item => item.name === favoriteData.name)){
-    favorites.push(favoriteData)
+  } else if (!favorites.some((item) => item.name === favoriteData.name)) {
+    favorites.push(favoriteData);
   }
   localStorage.setItem("favorites", JSON.stringify(favorites));
-console.log(localStorage);
+  console.log(localStorage);
   event.preventDefault();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function displayAttractions(data) {
-//   var docFrag = document.createDocumentFragment();
-
-//   for (var i = 0; i < 5; i++) {
-//     var divEl = document.createElement("div");
-
-//     var template = `<div class="box is-flex">
-//       <article class="media">
-//         <div class="media-left">
-//           <figure class="image is-64x64">
-//            <img src="${data.image}" alt="Image">
-//           </figure>
-//         </div>
-//         <div class="media-content">
-//           <div class="content">
-//             <p>
-//              <strong>${data.name}</strong>
-//              <br>
-//               ${data.wikipedia_extracts.text}
-//             </p>
-//           </div>
-//           <button class="saveButton">Add to Favorites!</button>
-//         </div>
-//       </article>
-//     </div>`;
-
-//     divEl.innerHTML = template;
-//     docFrag.append(divEl);
-//   }
-//   articlesEl.append(docFrag);
-//   // console.log(template);
-
