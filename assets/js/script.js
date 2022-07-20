@@ -3,9 +3,10 @@ var citySearchEl = document.querySelector("#city-search");
 var citySearch = "";
 var articlesEl = document.querySelector("#articles");
 var resultsEl = document.querySelector("#results");
+var favEl = document.querySelector("#favBtn");
 
 // This is our Event listener for the click event.  It also clears the previous search information.
-searchBtnEl.addEventListener("click", function (event) {
+searchBtnEl.addEventListener("click", function () {
   // console.log("Clicked");
   var citySearch = citySearchEl.value;
   articlesEl.innerHTML = ``;
@@ -27,12 +28,12 @@ function displayNamesKinds(data) {
   var docFrag = document.createDocumentFragment();
 
   for (var i = 0; i < data.length; i++) {
-    var divEl = document.createElement("button");
+    var divEl = document.createElement("div");
     // divEl.setAttribute("data-id", data[i].xid);
-    divEl.setAttribute("class", "box is-flex");
+    divEl.setAttribute("class", "box is-flex container");
   
 
-    var template = ` <article class="media">
+    var template = ` <article class="media is-fullwidth">
     <div class="media-content">
       <div class="content">
         <h5>${data[i].name}</h5>
@@ -40,7 +41,7 @@ function displayNamesKinds(data) {
         <a data-id="${data[i].xid}">Details</a>
       </div>
     </div>
-    <button class="saveButton is-justified">Add to Favorites!</button>
+    <button class="saveButton" onclick="addFavorite()" id="favBtn">Add to Favorites!</button>
   </article>
   `;
 
@@ -54,7 +55,6 @@ function displayNamesKinds(data) {
 
 
 function detailResults(event) {
-  var searchResults = document.getElementById("results");
   var  detailsUrl = apiBaseUrl+"/xid/"+event.target.getAttribute("data-id")+"?apikey=5ae2e3f221c38a28845f05b6b20dacbb21b5be1ba73523de4298d37a";
  
   return fetch(detailsUrl)
@@ -63,11 +63,11 @@ function detailResults(event) {
   })
   .then(function(data){
     var docFrag = document.createDocumentFragment();
-    console.log(data);
+    // console.log(data);
     var divEl = document.createElement("div");
     divEl.setAttribute("class", "box is-flex");
 
-    var template = `<article class="media">
+    var template = `<article class="media is-flex">
     <div class="media-content">
       <div class="content">
         <h5>${data.name}</h5>
@@ -88,6 +88,7 @@ articlesEl.addEventListener("click",function(event) {
    resultsEl.innerHTML = ``;
   detailResults(event);
 });
+
 
 
 

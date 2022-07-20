@@ -36,7 +36,8 @@ function getDestinations(){
     return response.json();
   })
   .then(function(data){
-    // console.log(data);
+    console.log("HERE IS OUR HIGH LEVEL DATA");
+    console.log(data);
     displayNamesKinds(data);
 
   });
