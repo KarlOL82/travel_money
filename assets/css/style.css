@@ -23,9 +23,9 @@ color: black
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     position: inherit;
-    margin-left: 70%;
+    margin-left: 400px;
     bottom: 23px;
     right: 28px;
     width: 180px;  
@@ -50,6 +50,10 @@ color: black
 .dropdown-content {
     max-height: 20em;
     overflow: auto;
-  }
+}
+
+footer{
+    text-align: center;
+}
 
   
