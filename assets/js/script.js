@@ -40,7 +40,6 @@ function displayNamesKinds(data) {
     <div class="media-content">
       <div class="content">
         <h5>${data[i].name}</h5>
-        <p>${getCategory(data[i].kinds)}</p>
         <a data-id="${data[i].xid}">Details</a>
       </div>
       <div>
@@ -97,23 +96,23 @@ articlesEl.addEventListener("click", function (event) {
 });
 
 // This function takes the category or Kind data and display the first kind as a string.
-function getCategory(data) {
-  var categoryText = data;
-  // console.log(categoryText);
-  var kindArray = categoryText.split(",");
-  // console.log(kindArray);
-  var kindTextRaw = kindArray[0];
-  // console.log(kindTextRaw);
-  // console.log(kindTextRaw.length);
-  if (kindArray[0].length < 10) {
-    return kindTextRaw;
-  } else {
-    // console.log(kindTextSplit);
-    var kindText = kindArray[0].split("_");
-    var kindConcat = kindText[0] + " " + kindText[1];
-    return kindConcat;
-  }
-}
+// function getCategory(data) {
+//   var categoryText = data;
+//   // console.log(categoryText);
+//   var kindArray = categoryText.split(",");
+//   // console.log(kindArray);
+//   var kindTextRaw = kindArray[0];
+//   // console.log(kindTextRaw);
+//   // console.log(kindTextRaw.length);
+//   if (kindArray[0].length < 10) {
+//     return kindTextRaw;
+//   } else {
+//     // console.log(kindTextSplit);
+//     var kindText = kindArray[0].split("_");
+//     var kindConcat = kindText[0] + " " + kindText[1];
+//     return kindConcat;
+//   }
+// }
 
 function favBtn(event) {
 
@@ -147,7 +146,6 @@ function displayFavorites(){
     <div class="media-content">
       <div class="content">
         <h5>${readyToDisplay[i].name}</h5>
-        <p>${getCategory(readyToDisplay[i].kinds)}</p>
       </div>
       <div>
        <button class="Extbutton button is-responsive is-danger is-active">Delete</button>
