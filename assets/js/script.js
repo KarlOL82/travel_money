@@ -39,7 +39,7 @@ function displayNamesKinds(data) {
         <a data-id="${data[i].xid}">Details</a>
       </div>
     </div>
-    <button class="saveButton" onclick="favBtn(event)" id="favBtn" data-id="${data[i].xid}" data-name="${data[i].name}" data-kinds="${data[i].kinds}">Add to Favorites!</button>
+    <button class="saveButton button is-link" onclick="favBtn(event)" id="favBtn" data-id="${data[i].xid}" data-name="${data[i].name}" data-kinds="${data[i].kinds}">Add to Favorites!</button>
   </article>
   `;
 
