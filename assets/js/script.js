@@ -41,7 +41,7 @@ function displayNamesKinds(data) {
         <a data-id="${data[i].xid}">Details</a>
       </div>
     </div>
-    <button class="saveButton" onclick="addFavorite()" id="favBtn">Add to Favorites!</button>
+    <button class="saveButton" onclick="favBtn(event)" id="favBtn" data-id="${data[i].xid}" data-name="${data[i].name}" data-kinds="${data[i].kinds}">Add to Favorites!</button>
   </article>
   `;
 
@@ -111,6 +111,39 @@ function getCategory(data) {
     return kindConcat;
   }
 }
+
+function favBtn(event){
+  // var favoriteEl = document.querySelector()
+  var favorites = JSON.parse(localStorage.getItem("favorites"));
+  var favoriteData = {
+    name: event.target.getAttribute("data-name"),
+    kinds: event.target.getAttribute("data-kinds"),
+    xid: event.target.getAttribute("data-id")
+  }
+  console.log(favoriteData);
+
+  // if (favorites === null){
+  //   favorites = [favoriteData];
+  // } else if (!favorites.some(item => item.name === favoriteData.name)){
+  //   favorites.push(favoriteData)
+  // }
+  // localStorage.setItem("favorites", JSON.stringify(favorites));
+  // window.location.reload();
+  event.preventDefault();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function displayAttractions(data) {
 //   var docFrag = document.createDocumentFragment();
