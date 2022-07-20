@@ -12,6 +12,16 @@ Online travel tool to display currency exchange rate and top attractions for a d
 4. Create a list of your favorites to review
 5. Enjoy your trip!
 
+## Preview Images
+Selecting which currency to convert to:
+![image](./assets/Images/Currency_Exchange.gif)
+
+Search and click for details + add a favorite:
+![image](./assets/Images/Search_Favorite_Details.gif)
+
+Goto and browse favorites:
+![image](./assets/Images/Go_to_Favorites.gif)
+
 ## Links
 
 Url for GitHub Repo: 

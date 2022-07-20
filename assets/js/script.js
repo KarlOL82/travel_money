@@ -8,7 +8,7 @@ var favRenderEl = document.querySelector("#favList");
 
 var savedLocationJSON = localStorage.getItem("favorites");
 var readyToDisplay = savedLocationJSON ? JSON.parse(savedLocationJSON) : [];
-// console.log(readyToDisplay);
+
 
 // This is our Event listener for the click event.  It also clears the previous search information.
 searchBtnEl.addEventListener("click", function () {
@@ -162,36 +162,4 @@ function displayFavorites(){
   }
 }
  
-
-
-
-
-
-
-
-
-// function displayFavorite(data) {
-//   var docFrag = document.createDocumentFragment();
-
-//   for (var i = 0; i < data.length; i++) {
-//     var divEl = document.createElement("div");
-//     divEl.setAttribute("class", "box is-flex container");
-
-//     var template = ` <article class="media is-fullwidth">
-//     <div class="media-content">
-//       <div class="content">
-//         <h5>${data[i].name}</h5>
-//         <p>${getCategory(data[i].kinds)}</p>
-//         <a data-id="${data[i].xid}">Details</a>
-//       </div>
-//     </div>
-//     <button class="saveButton" onclick="favBtn(event)" id="favBtn" data-id="${data[i].xid}" data-name="${data[i].name}" data-kinds="${data[i].kinds}">Add to Favorites!</button>
-//   </article>
-//   `;
-
-//     divEl.innerHTML = template;
-//     docFrag.append(divEl);
-//   }
-//   articlesEl.append(docFrag);
-//   // console.log(template);
-// }
+// To generate the delete option we need to be able to pull the favorites array and slice the index being targeted by the click event.
