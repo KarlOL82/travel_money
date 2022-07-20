@@ -4,6 +4,11 @@ var citySearch = "";
 var articlesEl = document.querySelector("#articles");
 var resultsEl = document.querySelector("#results");
 var favEl = document.querySelector("#favBtn");
+var favRenderEl = document.querySelector("#favList");
+
+var savedLocationJSON = localStorage.getItem("favorites");
+var readyToDisplay = savedLocationJSON ? JSON.parse(savedLocationJSON) : [];
+// console.log(readyToDisplay);
 
 // This is our Event listener for the click event.  It also clears the previous search information.
 searchBtnEl.addEventListener("click", function () {
@@ -109,14 +114,14 @@ function getCategory(data) {
 }
 
 function favBtn(event) {
-  // var favoriteEl = document.querySelector()
+
   var favorites = JSON.parse(localStorage.getItem("favorites"));
   var favoriteData = {
     name: event.target.getAttribute("data-name"),
     kinds: event.target.getAttribute("data-kinds"),
     xid: event.target.getAttribute("data-id"),
   };
-  console.log(favoriteData);
+  // console.log(favoriteData);
 
   if (favorites === null) {
     favorites = [favoriteData];
@@ -124,6 +129,67 @@ function favBtn(event) {
     favorites.push(favoriteData);
   }
   localStorage.setItem("favorites", JSON.stringify(favorites));
-  console.log(localStorage);
+  // console.log(localStorage);
   event.preventDefault();
 }
+
+// Display the Favorites to the html
+function displayFavorites(){
+  var docFragTwo = document.createDocumentFragment();
+
+  for (var i = 0; i < readyToDisplay.length; i++) {
+    var divElTwo = document.createElement("div");
+    divElTwo.setAttribute("class", "box is-flex container");
+
+    var template = ` <article class="media is-fullwidth">
+    <div class="media-content">
+      <div class="content">
+        <h5>${readyToDisplay[i].name}</h5>
+        <p>${getCategory(readyToDisplay[i].kinds)}</p>
+      </div>
+    </div>
+    <button class="saveButton">X</button>
+  </article>
+  `;
+
+    divElTwo.innerHTML = template;
+    docFragTwo.append(divElTwo);
+    // console.log(docFragTwo);
+    favRenderEl.append(docFragTwo);
+    console.log(favRenderEl);
+  }
+}
+ 
+
+
+
+
+
+
+
+
+// function displayFavorite(data) {
+//   var docFrag = document.createDocumentFragment();
+
+//   for (var i = 0; i < data.length; i++) {
+//     var divEl = document.createElement("div");
+//     divEl.setAttribute("class", "box is-flex container");
+
+//     var template = ` <article class="media is-fullwidth">
+//     <div class="media-content">
+//       <div class="content">
+//         <h5>${data[i].name}</h5>
+//         <p>${getCategory(data[i].kinds)}</p>
+//         <a data-id="${data[i].xid}">Details</a>
+//       </div>
+//     </div>
+//     <button class="saveButton" onclick="favBtn(event)" id="favBtn" data-id="${data[i].xid}" data-name="${data[i].name}" data-kinds="${data[i].kinds}">Add to Favorites!</button>
+//   </article>
+//   `;
+
+//     divEl.innerHTML = template;
+//     docFrag.append(divEl);
+//   }
+//   articlesEl.append(docFrag);
+//   // console.log(template);
+// }
