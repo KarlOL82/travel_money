@@ -17,6 +17,9 @@ Online travel tool to display currency exchange rate and top attractions for a d
 Url for GitHub Repo: 
 https://github.com/KarlOL82/travel_money
 
+Url for Live Page:
+https://karlol82.github.io/travel_money/index.html
+
 ## Credits
 
 1. [Avleen Dhillon](https://github.com/adhillon0817)
