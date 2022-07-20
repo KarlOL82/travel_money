@@ -1,5 +1,5 @@
 var requestUrl =
-  "https://v6.exchangerate-api.com/v6/d89c1ffd3333a8d33333a7cf/latest/USD";
+  "https://v6.exchangerate-api.com/v6/009119f00dce0d68513ba914/latest/USD";
 var locationData = document.getElementById("searchInput");
 var dropItem = document.getElementById("moneyItem");
 var dropMenu = document.getElementById("dropdownMenu");

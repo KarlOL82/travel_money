@@ -17,31 +17,30 @@ color: black
     padding: 15px;
     margin: 15px;
 }
-.saveButton{
+
+/* .saveButton{
     background-color: #555;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    /* opacity: 0.8; */
+    opacity: 0.9;
     position: inherit;
-    margin-left: 400px;
+    margin-left: 250px;
     bottom: 23px;
     right: 28px;
     width: 180px;  
-}
-
-
+} */
 
 .popUp{
-  color: white;
+  color: black;
   padding: 10px 20px;
-  border: none;
+  border: solid;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
-  margin-left: 70%;
-  font-size: 27px;
+  position: relative;
+  margin-left: 85%;
+  font-size: 25px;
 }
 
 #city-search {
@@ -56,5 +55,3 @@ color: black
 footer{
     text-align: center;
 }
-
-  
