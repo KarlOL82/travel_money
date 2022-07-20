@@ -43,8 +43,10 @@ function displayNamesKinds(data) {
         <p>${getCategory(data[i].kinds)}</p>
         <a data-id="${data[i].xid}">Details</a>
       </div>
+      <div>
+       <button class="saveButton button is-responsive is-link" onclick="favBtn(event)" id="favBtn" data-id="${data[i].xid}" data-name="${data[i].name}" data-kinds="${data[i].kinds}">Add to Favorites!</button>
+      </div>
     </div>
-    <button class="saveButton button is-link" onclick="favBtn(event)" id="favBtn" data-id="${data[i].xid}" data-name="${data[i].name}" data-kinds="${data[i].kinds}">Add to Favorites!</button>
   </article>
   `;
 
@@ -147,8 +149,10 @@ function displayFavorites(){
         <h5>${readyToDisplay[i].name}</h5>
         <p>${getCategory(readyToDisplay[i].kinds)}</p>
       </div>
+      <div>
+       <button class="Extbutton button is-responsive is-danger is-active">Delete</button>
+      </div>
     </div>
-    <button class="saveButton">X</button>
   </article>
   `;
 
